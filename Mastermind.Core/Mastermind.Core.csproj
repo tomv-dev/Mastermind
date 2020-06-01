@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mastermind.Models\Mastermind.Models.csproj" />
+    <ProjectReference Include="..\Mastermind.UI\Mastermind.UI.csproj" />
+  </ItemGroup>
+
+</Project>
