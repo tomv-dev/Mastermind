@@ -11,15 +11,17 @@ namespace Mastermind.UI
         internal static string NewGame = "Welcome to Mastermind!";
         internal static string UserWins = "You Win!";
         internal static string UserLoses = "You Lose!";
+        internal static string CorrectPosition = "+";
+        internal static string WrongPosition = "-";
+
+        internal static string WriteGuessNumber(int guessNumber)
+        {
+            return $"Turn {guessNumber}: ";
+        }
 
         internal static string PromptForGuesses(int numEntries, int maxNumbers)
         {
             return $"Please enter {numEntries} numbers between 1 and {maxNumbers}.";
-        }
-
-        internal static string WriteResponse(int numCorrect, int numWrongPosition, int numIncorrect)
-        {
-            return $"{numCorrect} correct | {numWrongPosition} in wrong position | {numIncorrect} wrong";
         }
 
         internal static string WriteSolution(List<int> entries)

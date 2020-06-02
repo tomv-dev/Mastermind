@@ -25,8 +25,9 @@ namespace Mastermind.Core
 
             outputService.WriteNewGame();
 
-            for(var guessNumber = 1; guessNumber < config.NumberOfGuesses; guessNumber++)
+            for(var guessNumber = 1; guessNumber <= config.NumberOfGuesses; guessNumber++)
             {
+                outputService.WriteGuessNumber(guessNumber);
                 var userGuesses = outputService.GetGuesses();
                 if (EndgameChecker.UserHasWon(userGuesses, solution))
                 {

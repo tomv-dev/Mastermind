@@ -15,5 +15,10 @@ namespace Mastermind.UI
         {
             Console.WriteLine(message);
         }
+
+        public void Write(string message)
+        {
+            Console.Write(message);
+        }
     }
 }

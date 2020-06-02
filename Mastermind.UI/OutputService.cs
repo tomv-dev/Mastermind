@@ -21,15 +21,26 @@ namespace Mastermind.UI
             var guessResponses = response.ToList();
             var numCorrect = guessResponses.Count(x => x == GuessResponse.RightPosition);
             var numIncluded = guessResponses.Count(x => x == GuessResponse.WrongPosition);
-            var numWrong = guessResponses.Count(x => x == GuessResponse.NotInSolution);
 
-            _interfaceService.WriteLine(OutputConstants.WriteResponse(numCorrect, numIncluded, numWrong));
+            WriteNumCorrect(numCorrect);
+            WriteNumIncluded(numIncluded);
+            _interfaceService.WriteLine(string.Empty);
             _interfaceService.WriteLine(string.Empty);
         }
 
         public void WriteUserWins()
         {
             _interfaceService.WriteLine(OutputConstants.UserWins);
+        }
+
+        public void WriteNumCorrect(int numCorrect)
+        {
+            Enumerable.Range(0, numCorrect).ToList().ForEach(x => _interfaceService.Write(OutputConstants.CorrectPosition));
+        }
+
+        public void WriteNumIncluded(int numIncluded)
+        {
+            Enumerable.Range(0, numIncluded).ToList().ForEach(x => _interfaceService.Write(OutputConstants.WrongPosition));
         }
 
         public void WriteUserLoses()
@@ -40,6 +51,11 @@ namespace Mastermind.UI
         public void WriteSolution(List<int> entries)
         {
             _interfaceService.WriteLine(OutputConstants.WriteSolution(entries));
+        }
+
+        public void WriteGuessNumber(int guessNumber)
+        {
+            _interfaceService.Write(OutputConstants.WriteGuessNumber(guessNumber));
         }
 
         public List<int> GetGuesses()
@@ -57,6 +73,7 @@ namespace Mastermind.UI
         public void WriteNewGame()
         {
             _interfaceService.WriteLine(OutputConstants.NewGame);
+            _interfaceService.WriteLine(string.Empty);
         }
     }
 }

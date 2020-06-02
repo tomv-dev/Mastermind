@@ -15,7 +15,7 @@ namespace Mastermind.UI
                 return false;
             }
 
-            return input.Length <= numEntries && input.All(x => char.IsDigit(x) && char.GetNumericValue(x) <= maxNum);
+            return input.Length == numEntries && input.All(x => char.IsDigit(x) && char.GetNumericValue(x) <= maxNum);
         }
     }
 }
